@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
+import router from "./route/gateway.js"
 
 const app = express();
 const corsOption = {
@@ -46,3 +47,7 @@ app.use(
 	)
 );
 
+app.use(router)
+
+
+export default app
