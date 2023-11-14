@@ -1,11 +1,12 @@
 import { Router } from "express";
 import { userProxy,tableProxy,kitchenProxy,menuProxy,orderProxy,paymentProxy } from "../middleware/proxy.js"
+import {tableRouter}  from "./table.js";
 
 const router = Router()
 
 router.use("/user",userProxy)
 
-router.use("/table",tableProxy)
+router.use("/table",tableRouter)
 
 router.use("/menu",menuProxy)
 
