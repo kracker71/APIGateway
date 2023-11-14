@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import router from "./route/gateway.js"
+import bodyParser from "body-parser"
 
 const app = express();
 const corsOption = {
@@ -10,6 +11,10 @@ const corsOption = {
 	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 };
 app.use(cors(corsOption));
+//app.use(bodyParser.json())
+
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended:false}));
 
 morgan.token("splitter", (req) => {
 	return "\x1b[36m--------------------------------------------\x1b[0m\n";

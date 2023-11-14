@@ -3,6 +3,7 @@ import config from '../config/config.js'
 
 export const verifyUser = async (req, res, next) => {
     try {
+      console.log(req.headers)
         const user = await axios.get(`http://${config.user_url}:${config.user_port}/user/checklogin`, {
           headers: {
             authorization: req.headers.authorization,

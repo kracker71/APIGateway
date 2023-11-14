@@ -1,8 +1,7 @@
-const PROTO_PATH="../tableManagement.proto";
 import config from "../config/config.js"
-const grpc = require("@grpc/grpc-js");
-const protoLoader = require("@grpc/proto-loader");
-
+import grpc from "@grpc/grpc-js"
+import protoLoader from "@grpc/proto-loader"
+const PROTO_PATH =  "./tableManagement.proto";
 var packageDefinition = protoLoader.loadSync(PROTO_PATH,{
     keepCase: true,
     longs: String,
@@ -16,4 +15,4 @@ var tableManagementService = grpc.loadPackageDefinition(packageDefinition).Table
 
 const client = new tableManagementService(path, grpc.credentials.createInsecure());
 
-module.exports = client;
+export  {client}
