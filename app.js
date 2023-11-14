@@ -11,8 +11,10 @@ const corsOption = {
 	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 };
 app.use(cors(corsOption));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+//app.use(bodyParser.json())
+
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended:false}));
 
 morgan.token("splitter", (req) => {
 	return "\x1b[36m--------------------------------------------\x1b[0m\n";
